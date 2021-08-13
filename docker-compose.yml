@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  spring_boot_back_end:
+    build: .
+    container_name: spring_boot_back_end
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_db:5432/postgres
+    ports:
+      - "8080:8080"
+    restart: "no"
+    depends_on:
+      - postgres_db
+
+  postgres_db:
+    image: postgres
+    container_name: postgres_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: "no"
+
+volumes:
+  pgdata:
