@@ -15,7 +15,7 @@ A single page store for selling food, clothes and toys.
 Session-based shopping carts.
 Mobile-friendly user interface.
 
-Built using Java, Spring Boot, Postgres, Docker, React and Bootstrap.
+Built using Java, Spring Boot, Postgres, Docker, React, TypeScript and Bootstrap.
 
 ---
 ### Building back-end
